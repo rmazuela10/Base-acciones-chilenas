@@ -33,9 +33,28 @@ def leer_json(p: Path, defecto):
         return defecto
 
 
+def _linea(x):
+    return json.dumps(x, ensure_ascii=False, separators=(",", ":"))
+
+
+def texto_json(obj) -> str:
+    """JSON legible hacia abajo: una fila (un dia, una serie) por linea y cada fila compacta; asi pesa casi lo mismo que
+    el JSON en una sola linea y los cambios de cada corrida se ven linea a linea en GitHub."""
+    nl = chr(10)
+    if isinstance(obj, list):
+        return "[" + nl + ("," + nl).join(_linea(x) for x in obj) + nl + "]" + nl
+    partes = []
+    for k, v in obj.items():
+        if isinstance(v, list):
+            partes.append(_linea(k) + ":[" + nl + ("," + nl).join(_linea(x) for x in v) + nl + "]")
+        else:
+            partes.append(_linea(k) + ":" + _linea(v))
+    return "{" + nl + ("," + nl).join(partes) + nl + "}" + nl
+
+
 def escribir_json(p: Path, obj):
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    p.write_text(texto_json(obj), encoding="utf-8", newline=chr(10))
 
 
 def cargar_fetcher(fuente: str):
