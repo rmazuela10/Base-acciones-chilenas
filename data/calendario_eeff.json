@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-02T21:20:13+00:00",
+ "actualizado": "2026-11-03T15:51:54+00:00",
  "fuente": "CMF, pestaña «Fechas de Divulgación de EEFF» de cada emisor",
  "empresas": {
   "AGUAS-A.SN": {
@@ -74,7 +74,7 @@
    "nombre": "Banco Santander Chile",
    "rut": "97036000-K",
    "fechas": {},
-   "error": "ValueError: no se encontró la tabla de fechas"
+   "error": null
   },
   "CAP.SN": {
    "nombre": "CAP",
@@ -204,7 +204,7 @@
    "nombre": "Banco de Chile",
    "rut": "97004000-5",
    "fechas": {},
-   "error": "ValueError: no se encontró la tabla de fechas"
+   "error": null
   },
   "CMPC.SN": {
    "nombre": "Empresas CMPC",
@@ -520,7 +520,7 @@
    "nombre": "Banco Itaú Chile",
    "rut": "97023000-9",
    "fechas": {},
-   "error": "ValueError: no se encontró la tabla de fechas"
+   "error": null
   },
   "LTM.SN": {
    "nombre": "LATAM Airlines",
@@ -861,7 +861,7 @@
     "2021-09": "2021-11-17",
     "2021-12": "2022-02-25"
    },
-   "error": null
+   "error": "ValueError: no se encontró la tabla de fechas"
   },
   "PAMPA.SN": {
    "nombre": "Pampa Investments",
