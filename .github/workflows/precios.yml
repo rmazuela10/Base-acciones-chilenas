@@ -1,16 +1,16 @@
 name: Actualizar precios
 
-# De lunes a viernes, cada 30 minutos mientras opera la bolsa de Santiago (09:30 a 17:00 hora de Chile), más una
+# De lunes a viernes, cada 30 minutos (minutos 7 y 37: GitHub descarta o atrasa más las corridas de la hora en punto y la media hora) mientras opera la bolsa de Santiago (09:30 a 17:00 hora de Chile), más una
 # corrida después del cierre. Cada corrida trae de Yahoo Finance el último valor del día y reemplaza la fila de hoy:
 # en cada serie hay una sola fila por fecha. Las corridas sin datos nuevos no guardan nada.
 #
-# GitHub programa en UTC y Chile cambia de horario (UTC-3 en verano, UTC-4 en invierno). Las 12:00 a 21:30 UTC
-# cubren la rueda en ambos horarios; las 22:15 y 23:15 UTC caen después del cierre. GitHub puede atrasar una
+# GitHub programa en UTC y Chile cambia de horario (UTC-3 en verano, UTC-4 en invierno). Las 12:07 a 21:37 UTC
+# cubren la rueda en ambos horarios; las 22:22 y 23:22 UTC caen después del cierre. GitHub puede atrasar una
 # ejecución programada unos minutos. Se puede lanzar a mano desde Actions > "Actualizar precios" > Run workflow.
 on:
   schedule:
-    - cron: '0,30 12-21 * * 1-5'
-    - cron: '15 22,23 * * 1-5'
+    - cron: '7,37 12-21 * * 1-5'
+    - cron: '22 22,23 * * 1-5'
   workflow_dispatch:
     inputs:
       completo:
