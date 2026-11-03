@@ -1,0 +1,68 @@
+name: Calendario de estados financieros
+
+# Todos los domingos a las 12:00 hora de Chile lee en la CMF las "Fechas de Divulgación de EEFF" de cada empresa y guarda
+# data/calendario_eeff.json. Dos horas después (14:00) una rutina de Claude lo lee y envía el aviso por correo.
+# GitHub programa en UTC y Chile cambia de horario: 12:00 son las 15:00 UTC (verano, UTC-3) o las 16:00 UTC (invierno, UTC-4).
+# Se programan las dos y el paso "Hora de Chile" deja pasar solo la que cae a las 12; se puede lanzar a mano desde Actions.
+on:
+  schedule:
+    - cron: '0 15 * * 0'
+    - cron: '0 16 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calendario
+  cancel-in-progress: false
+
+jobs:
+  calendario:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Hora de Chile
+        id: hora
+        run: |
+          hora=$(TZ=America/Santiago date +%H)
+          echo "Hora en Chile: $(TZ=America/Santiago date '+%Y-%m-%d %H:%M %Z')"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$hora" = "12" ]; then
+            echo "ejecutar=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No son las 12 en Chile: esta ejecución no hace nada."
+            echo "ejecutar=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.hora.outputs.ejecutar == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.hora.outputs.ejecutar == 'true'
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Instalar librerías
+        if: steps.hora.outputs.ejecutar == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Calendario desde la CMF
+        if: steps.hora.outputs.ejecutar == 'true'
+        env:
+          PYTHONUTF8: '1'
+        run: python calendario_eeff.py
+
+      - name: Guardar calendario
+        if: steps.hora.outputs.ejecutar == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendario_eeff.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "Calendario de estados financieros $(TZ=America/Santiago date +%F)"
+            git pull --rebase -q || true
+            git push
+          fi

@@ -7,7 +7,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Utilities"
+   "sector": "Utilities",
+   "rut": "61808000-5",
+   "ipsa": true
   },
   {
    "ticker": "ANDINA-B.SN",
@@ -15,7 +17,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Consumo básico"
+   "sector": "Consumo básico",
+   "rut": "91144000-8",
+   "ipsa": true
   },
   {
    "ticker": "BCI.SN",
@@ -23,7 +27,12 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Financiero"
+   "sector": "Financiero",
+   "rut": "97006000-6",
+   "ipsa": true,
+   "eeff": {
+    "tipo": "banco"
+   }
   },
   {
    "ticker": "BSANTANDER.SN",
@@ -31,7 +40,12 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Financiero"
+   "sector": "Financiero",
+   "rut": "97036000-K",
+   "ipsa": true,
+   "eeff": {
+    "tipo": "banco"
+   }
   },
   {
    "ticker": "CAP.SN",
@@ -39,7 +53,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Materiales"
+   "sector": "Materiales",
+   "rut": "91297000-0",
+   "ipsa": true
   },
   {
    "ticker": "CCU.SN",
@@ -47,7 +63,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Consumo básico"
+   "sector": "Consumo básico",
+   "rut": "90413000-1",
+   "ipsa": true
   },
   {
    "ticker": "CENCOSUD.SN",
@@ -55,7 +73,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Consumo discrecional"
+   "sector": "Consumo discrecional",
+   "rut": "93834000-5",
+   "ipsa": true
   },
   {
    "ticker": "CENCOMALLS.SN",
@@ -63,7 +83,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Inmobiliario"
+   "sector": "Inmobiliario",
+   "rut": "76433310-1",
+   "ipsa": true
   },
   {
    "ticker": "CHILE.SN",
@@ -71,7 +93,12 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Financiero"
+   "sector": "Financiero",
+   "rut": "97004000-5",
+   "ipsa": true,
+   "eeff": {
+    "tipo": "banco"
+   }
   },
   {
    "ticker": "CMPC.SN",
@@ -79,7 +106,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Materiales"
+   "sector": "Materiales",
+   "rut": "90222000-3",
+   "ipsa": true
   },
   {
    "ticker": "COLBUN.SN",
@@ -87,7 +116,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Utilities"
+   "sector": "Utilities",
+   "rut": "96505760-9",
+   "ipsa": true
   },
   {
    "ticker": "CONCHATORO.SN",
@@ -95,7 +126,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Consumo básico"
+   "sector": "Consumo básico",
+   "rut": "90227000-0",
+   "ipsa": true
   },
   {
    "ticker": "COPEC.SN",
@@ -103,7 +136,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Energía"
+   "sector": "Energía",
+   "rut": "90690000-9",
+   "ipsa": true
   },
   {
    "ticker": "ECL.SN",
@@ -111,7 +146,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Utilities"
+   "sector": "Utilities",
+   "rut": "88006900-4",
+   "ipsa": true
   },
   {
    "ticker": "ENELAM.SN",
@@ -119,7 +156,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Utilities"
+   "sector": "Utilities",
+   "rut": "94271000-3",
+   "ipsa": true
   },
   {
    "ticker": "ENELCHILE.SN",
@@ -127,7 +166,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Utilities"
+   "sector": "Utilities",
+   "rut": "76536353-5",
+   "ipsa": true
   },
   {
    "ticker": "ENTEL.SN",
@@ -135,7 +176,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Telecomunicaciones"
+   "sector": "Telecomunicaciones",
+   "rut": "92580000-7",
+   "ipsa": true
   },
   {
    "ticker": "FALABELLA.SN",
@@ -143,7 +186,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Consumo discrecional"
+   "sector": "Consumo discrecional",
+   "rut": "90749000-9",
+   "ipsa": true
   },
   {
    "ticker": "IAM.SN",
@@ -151,7 +196,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Utilities"
+   "sector": "Utilities",
+   "rut": "77274820-5",
+   "ipsa": true
   },
   {
    "ticker": "ITAUCL.SN",
@@ -159,7 +206,12 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Financiero"
+   "sector": "Financiero",
+   "rut": "97023000-9",
+   "ipsa": true,
+   "eeff": {
+    "tipo": "banco"
+   }
   },
   {
    "ticker": "LTM.SN",
@@ -167,7 +219,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Industrial"
+   "sector": "Industrial",
+   "rut": "89862200-2",
+   "ipsa": true
   },
   {
    "ticker": "MALLPLAZA.SN",
@@ -175,7 +229,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Inmobiliario"
+   "sector": "Inmobiliario",
+   "rut": "76017019-4",
+   "ipsa": true
   },
   {
    "ticker": "PARAUCO.SN",
@@ -183,7 +239,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Inmobiliario"
+   "sector": "Inmobiliario",
+   "rut": "94627000-8",
+   "ipsa": true
   },
   {
    "ticker": "QUINENCO.SN",
@@ -191,7 +249,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Industrial"
+   "sector": "Industrial",
+   "rut": "91705000-7",
+   "ipsa": true
   },
   {
    "ticker": "RIPLEY.SN",
@@ -199,7 +259,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Consumo discrecional"
+   "sector": "Consumo discrecional",
+   "rut": "99579730-5",
+   "ipsa": true
   },
   {
    "ticker": "SMU.SN",
@@ -207,7 +269,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Consumo básico"
+   "sector": "Consumo básico",
+   "rut": "76012676-4",
+   "ipsa": true
   },
   {
    "ticker": "SONDA.SN",
@@ -215,7 +279,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Tecnología"
+   "sector": "Tecnología",
+   "rut": "83628100-4",
+   "ipsa": false
   },
   {
    "ticker": "SQM-B.SN",
@@ -223,7 +289,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Materiales"
+   "sector": "Materiales",
+   "rut": "93007000-9",
+   "ipsa": true
   },
   {
    "ticker": "VAPORES.SN",
@@ -231,7 +299,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Industrial"
+   "sector": "Industrial",
+   "rut": "90160000-7",
+   "ipsa": true
   },
   {
    "ticker": "ILC.SN",
@@ -239,7 +309,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Financiero"
+   "sector": "Financiero",
+   "rut": "94139000-5",
+   "ipsa": true
   },
   {
    "ticker": "SALFACORP.SN",
@@ -247,7 +319,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Industrial"
+   "sector": "Industrial",
+   "rut": "96885880-7",
+   "ipsa": true
   },
   {
    "ticker": "PAMPA.SN",
@@ -255,7 +329,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Materiales"
+   "sector": "Materiales",
+   "rut": "96532830-0",
+   "ipsa": true
   },
   {
    "ticker": "BESALCO.SN",
@@ -263,7 +339,9 @@
    "categoria": "accion",
    "moneda": "CLP",
    "fuente": "yahoo",
-   "sector": "Industrial"
+   "sector": "Industrial",
+   "rut": "92434000-2",
+   "ipsa": false
   },
   {
    "ticker": "CFMITNIPSA.SN",
