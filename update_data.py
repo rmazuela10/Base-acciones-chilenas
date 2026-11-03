@@ -4,7 +4,7 @@ import importlib
 import json
 import sys
 import time
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
@@ -142,7 +142,7 @@ def main():
             time.sleep(PAUSA)
 
     escribir_json(man_path, {"mercado": args.mercado,
-                             "actualizado": datetime.now().isoformat(timespec="seconds"),
+                             "actualizado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                              "series": filas})
     print(f"\nResumen: {ok} ok, {len(err)} con error")
     for t, e in err:
