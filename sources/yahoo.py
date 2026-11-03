@@ -194,3 +194,26 @@ def hubo_ajuste(ticker: str, desde: str) -> bool:
             return True
     return False
 
+
+def ultimo_precio(inst: dict) -> dict | None:
+    """Último precio de Yahoo en una sola llamada: {"d","c","v"} con c = cierre ajustado y, en acciones, s = cierre sin ajustar.
+    Es lo que pide la corrida de cada 30 minutos: no baja historia, solo el valor más reciente."""
+    t = inst["ticker"]
+    if inst.get("barras") == "horarias":   # el diario de estos ETF deja días congelados: se usa la última barra horaria
+        h = _barras_horarias(t, (date.today() - timedelta(days=5)).isoformat())
+        return {"d": h[-1]["d"], "c": h[-1]["c"], "v": h[-1]["v"]} if h else None
+    df = yf.Ticker(t).history(period="5d", auto_adjust=False)
+    if df is None or df.empty:
+        return None
+    for ts, row in df.iloc[::-1].iterrows():
+        cierre = _num(row.get("Close"))
+        if cierre is None:
+            continue
+        ajust = _num(row.get("Adj Close"))
+        v = _num(row.get("Volume"))
+        out = {"d": ts.strftime("%Y-%m-%d"), "c": round(ajust if ajust is not None else cierre, 6), "v": int(v) if v else None}
+        if inst.get("categoria") == "accion":
+            out["s"] = round(cierre, 6)
+        return out
+    return None
+

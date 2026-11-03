@@ -43,7 +43,16 @@ jobs:
       - name: Precios desde Yahoo Finance
         env:
           PYTHONUTF8: '1'
-        run: python update_data.py ${{ inputs.completo && '--completo' || '' }}
+        # Cada 30 minutos en la rueda (minutos 7 y 37): solo el último precio, ajustado y sin ajustar. La corrida de después del
+        # cierre (22:22 y 23:22 UTC) y las manuales revisan además los últimos días y los ajustes por dividendos; "completo" baja los 15 años.
+        run: |
+          if [ "${{ inputs.completo }}" = "true" ]; then
+            python update_data.py --completo
+          elif [ "${{ github.event.schedule }}" = "7,37 12-21 * * 1-5" ]; then
+            python update_data.py --ultimo
+          else
+            python update_data.py
+          fi
 
       # Se guarda siempre lo que se alcanzó a actualizar: un instrumento con error conserva su serie anterior.
       - name: Guardar cambios

@@ -139,12 +139,51 @@ def procesar(inst, completo: bool, ignorar_previo: bool):
     return fila_manifest(inst, rel, previo, error)
 
 
+def procesar_ultimo(inst):
+    """Corrida de cada 30 minutos: pide a Yahoo solo el último precio (ajustado y sin ajustar) y pisa la fila de hoy
+    (o agrega el día nuevo). No toca el resto de la historia: los ajustes por dividendos los hace la corrida de después del cierre."""
+    ticker = inst["ticker"]
+    rel = "prices/" + nombre_archivo(ticker) + ".json"
+    ruta = RAIZ / "data" / rel
+    previo = leer_json(ruta, []) if ruta.exists() else []
+    if len(previo) < MIN_PUNTOS:
+        return procesar(inst, False, False)   # sin historia guardada: descarga normal
+    error = None
+    try:
+        nuevo = cargar_yahoo().ultimo_precio(inst)
+        if nuevo is None:
+            raise ValueError("Yahoo no devolvió precio")
+        ult = previo[-1]
+        relleno = not nuevo.get("v") and nuevo["c"] == ult["c"] and inst.get("categoria") in ("accion", "etf")
+        absurdo = ult["c"] > 0 and not 0.4 < nuevo["c"] / ult["c"] < 2.5
+        if nuevo["d"] < ult["d"] or relleno:
+            pass                                     # día anterior o sin transacciones: no se agrega nada
+        elif absurdo:
+            raise ValueError("precio fuera de rango frente al último guardado")
+        else:
+            if nuevo["d"] == ult["d"]:
+                previo.pop()
+            if inst.get("categoria") == "accion" and nuevo.get("s") is None:
+                nuevo["s"] = ult.get("s")
+            previo.append(nuevo)
+            escribir_json(ruta, previo)
+    except Exception as e:
+        error = (str(e) or e.__class__.__name__)[:120]
+    return fila_manifest(inst, rel, previo, error)
+
+
+def cargar_yahoo():
+    from sources import yahoo
+    return yahoo
+
+
 def main():
     if hasattr(sys.stdout, 'reconfigure'):
         sys.stdout.reconfigure(encoding='utf-8', errors='replace')
     ap = argparse.ArgumentParser()
     ap.add_argument("--mercado", default=MERCADO_DEFECTO)
     ap.add_argument("--completo", action="store_true", help="ignora lo existente y baja todo el historial")
+    ap.add_argument("--ultimo", action="store_true", help="solo el último precio de Yahoo (ajustado y sin ajustar); la corrida de cada 30 minutos")
     ap.add_argument("--solo", help="tickers separados por coma (el resto conserva su fila previa)")
     args = ap.parse_args()
 
@@ -163,7 +202,7 @@ def main():
         if solo and inst["ticker"] not in solo and inst["ticker"] in previas:
             filas.append(previas[inst["ticker"]])
             continue
-        fila = procesar(inst, args.completo, muestra)
+        fila = procesar_ultimo(inst) if args.ultimo else procesar(inst, args.completo, muestra)
         filas.append(fila)
         if fila["error"]:
             err.append((inst["ticker"], fila["error"]))
