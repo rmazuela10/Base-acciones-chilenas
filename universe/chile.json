@@ -519,6 +519,14 @@
    "moneda": "USD",
    "fuente": "yahoo",
    "sector": "Commodities"
+  },
+  {
+   "ticker": "CLP=X",
+   "nombre": "Dólar (pesos por US$)",
+   "categoria": "referencia",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": null
   }
  ]
 }
