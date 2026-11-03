@@ -178,3 +178,19 @@ def _fetch_ajustada(inst: dict, desde: str | None) -> list[dict]:
     if not rows:
         raise ValueError("Yahoo no devolvió cierres válidos")
     return rows
+
+
+def hubo_ajuste(ticker: str, desde: str) -> bool:
+    """True si Yahoo informa un dividendo o un split desde `desde`. Solo entonces cambia el pasado ajustado y vale la pena
+    bajar de nuevo la historia completa; una diferencia suelta en un día (dato corregido) no es un ajuste."""
+    try:
+        df = yf.Ticker(ticker).history(start=desde, auto_adjust=False)
+    except Exception:
+        return True  # sin poder confirmarlo, se prefiere la descarga completa
+    if df is None or df.empty:
+        return False
+    for col in ("Dividends", "Stock Splits"):
+        if col in df and (df[col].fillna(0) > 0).any():
+            return True
+    return False
+

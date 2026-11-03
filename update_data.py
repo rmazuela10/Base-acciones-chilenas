@@ -72,9 +72,18 @@ def cargar_fetcher(fuente: str):
 
 
 def _historia_cambio(previo, nuevo, tol=0.005):
-    """True si el cierre en fechas solapadas difiere >0.5% (Yahoo reajustó el historial)."""
-    ant = {r["d"]: r["c"] for r in previo}
+    """True si el cierre de días ya cerrados difiere >0.5% (Yahoo reajustó el historial por un dividendo o split).
+    La última fila guardada (el día de la corrida anterior, que puede ser un valor intradía) no cuenta: su precio cambia
+    de una corrida a otra sin que haya ajuste, y comparar con ella bajaría los 15 años cada vez que el precio se mueve."""
+    ant = {r["d"]: r["c"] for r in previo[:-1]}
     return any(r["d"] in ant and ant[r["d"]] > 0 and abs(r["c"] / ant[r["d"]] - 1) > tol for r in nuevo)
+
+
+def _hay_ajuste(inst, desde) -> bool:
+    if inst.get("fuente", "yahoo") != "yahoo":
+        return True
+    from sources.yahoo import hubo_ajuste
+    return hubo_ajuste(inst["ticker"], desde)
 
 
 def fila_manifest(inst, archivo, datos, error):
@@ -109,7 +118,7 @@ def procesar(inst, completo: bool, ignorar_previo: bool):
                 ult = date.fromisoformat(previo[-1]["d"])
                 desde = (ult - timedelta(days=SOLAPE_DIAS)).isoformat()
             nuevo = fetch(inst, desde or inicio_historia())
-            if desde and _historia_cambio(previo, nuevo):  # dividendo/split reajustó el pasado
+            if desde and _historia_cambio(previo, nuevo) and _hay_ajuste(inst, desde):  # dividendo/split reajustó el pasado
                 desde, nuevo = None, fetch(inst, inicio_historia())
             if desde is None:
                 previo = []  # descarga completa: reemplaza todo lo previo
