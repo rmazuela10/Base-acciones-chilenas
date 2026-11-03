@@ -1,0 +1,446 @@
+{
+ "mercado": "chile",
+ "instrumentos": [
+  {
+   "ticker": "AGUAS-A.SN",
+   "nombre": "Aguas Andinas A",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "ANDINA-B.SN",
+   "nombre": "Embotelladora Andina B",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Consumo básico"
+  },
+  {
+   "ticker": "BCI.SN",
+   "nombre": "Banco de Crédito e Inversiones",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Financiero"
+  },
+  {
+   "ticker": "BSANTANDER.SN",
+   "nombre": "Banco Santander Chile",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Financiero"
+  },
+  {
+   "ticker": "CAP.SN",
+   "nombre": "CAP",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Materiales"
+  },
+  {
+   "ticker": "CCU.SN",
+   "nombre": "CCU",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Consumo básico"
+  },
+  {
+   "ticker": "CENCOSUD.SN",
+   "nombre": "Cencosud",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Consumo discrecional"
+  },
+  {
+   "ticker": "CENCOMALLS.SN",
+   "nombre": "Cencosud Shopping",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Inmobiliario"
+  },
+  {
+   "ticker": "CHILE.SN",
+   "nombre": "Banco de Chile",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Financiero"
+  },
+  {
+   "ticker": "CMPC.SN",
+   "nombre": "Empresas CMPC",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Materiales"
+  },
+  {
+   "ticker": "COLBUN.SN",
+   "nombre": "Colbún",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "CONCHATORO.SN",
+   "nombre": "Viña Concha y Toro",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Consumo básico"
+  },
+  {
+   "ticker": "COPEC.SN",
+   "nombre": "Empresas Copec",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Energía"
+  },
+  {
+   "ticker": "ECL.SN",
+   "nombre": "Engie Energía Chile",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "ENELAM.SN",
+   "nombre": "Enel Américas",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "ENELCHILE.SN",
+   "nombre": "Enel Chile",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "ENTEL.SN",
+   "nombre": "Entel",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Telecomunicaciones"
+  },
+  {
+   "ticker": "FALABELLA.SN",
+   "nombre": "Falabella",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Consumo discrecional"
+  },
+  {
+   "ticker": "IAM.SN",
+   "nombre": "Inversiones Aguas Metropolitanas",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "ITAUCL.SN",
+   "nombre": "Banco Itaú Chile",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Financiero"
+  },
+  {
+   "ticker": "LTM.SN",
+   "nombre": "LATAM Airlines",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Industrial"
+  },
+  {
+   "ticker": "MALLPLAZA.SN",
+   "nombre": "Plaza S.A.",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Inmobiliario"
+  },
+  {
+   "ticker": "PARAUCO.SN",
+   "nombre": "Parque Arauco",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Inmobiliario"
+  },
+  {
+   "ticker": "QUINENCO.SN",
+   "nombre": "Quiñenco",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Industrial"
+  },
+  {
+   "ticker": "RIPLEY.SN",
+   "nombre": "Ripley Corp",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Consumo discrecional"
+  },
+  {
+   "ticker": "SMU.SN",
+   "nombre": "SMU",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Consumo básico"
+  },
+  {
+   "ticker": "SONDA.SN",
+   "nombre": "Sonda",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Tecnología"
+  },
+  {
+   "ticker": "SQM-B.SN",
+   "nombre": "SQM Serie B",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Materiales"
+  },
+  {
+   "ticker": "VAPORES.SN",
+   "nombre": "CSAV",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Industrial"
+  },
+  {
+   "ticker": "ILC.SN",
+   "nombre": "Inversiones La Construcción",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Financiero"
+  },
+  {
+   "ticker": "SALFACORP.SN",
+   "nombre": "Salfacorp",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Industrial"
+  },
+  {
+   "ticker": "PAMPA.SN",
+   "nombre": "Pampa Investments",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Materiales"
+  },
+  {
+   "ticker": "BESALCO.SN",
+   "nombre": "Besalco",
+   "categoria": "accion",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Industrial"
+  },
+  {
+   "ticker": "CFMITNIPSA.SN",
+   "nombre": "ETF It Now MSCI IPSA",
+   "categoria": "etf",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Chile",
+   "barras": "horarias"
+  },
+  {
+   "ticker": "CFIETFCC.SN",
+   "nombre": "ETF Singular Chile Corporativo",
+   "categoria": "etf",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Renta fija"
+  },
+  {
+   "ticker": "CFIETFCD.SN",
+   "nombre": "ETF Singular Chile Corta Duración",
+   "categoria": "etf",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "Renta fija"
+  },
+  {
+   "ticker": "CFISPETF.SN",
+   "nombre": "ETF Singular S&P 500",
+   "categoria": "etf",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "CFINASDAQ.SN",
+   "nombre": "ETF Singular Nasdaq 100",
+   "categoria": "etf",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "IVV.SN",
+   "nombre": "iShares Core S&P 500 (IVV)",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "IVVCL.SN",
+   "nombre": "iShares Core S&P 500 (IVV, en CLP)",
+   "categoria": "etf",
+   "moneda": "CLP",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "IVW.SN",
+   "nombre": "iShares S&P 500 Growth",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "IVE.SN",
+   "nombre": "iShares S&P 500 Value",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "ACWI.SN",
+   "nombre": "iShares MSCI ACWI",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Global"
+  },
+  {
+   "ticker": "EEM.SN",
+   "nombre": "iShares MSCI Emerging Markets",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Emergentes y LatAm"
+  },
+  {
+   "ticker": "EZU.SN",
+   "nombre": "iShares MSCI Eurozone",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Europa y Japón"
+  },
+  {
+   "ticker": "EWJ.SN",
+   "nombre": "iShares MSCI Japan",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Europa y Japón"
+  },
+  {
+   "ticker": "EWG.SN",
+   "nombre": "iShares MSCI Germany",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Europa y Japón"
+  },
+  {
+   "ticker": "EWZ.SN",
+   "nombre": "iShares MSCI Brazil",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Emergentes y LatAm"
+  },
+  {
+   "ticker": "ILF.SN",
+   "nombre": "iShares Latin America 40",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Emergentes y LatAm"
+  },
+  {
+   "ticker": "ECH.SN",
+   "nombre": "iShares MSCI Chile",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Chile"
+  },
+  {
+   "ticker": "IYW.SN",
+   "nombre": "iShares US Technology",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "IYF.SN",
+   "nombre": "iShares US Financials",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "EE.UU."
+  },
+  {
+   "ticker": "LQD.SN",
+   "nombre": "iShares iBoxx USD Investment Grade",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Renta fija"
+  },
+  {
+   "ticker": "HYG.SN",
+   "nombre": "iShares iBoxx USD High Yield",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Renta fija"
+  },
+  {
+   "ticker": "IAU.SN",
+   "nombre": "iShares Gold Trust",
+   "categoria": "etf",
+   "moneda": "USD",
+   "fuente": "yahoo",
+   "sector": "Commodities"
+  }
+ ]
+}
