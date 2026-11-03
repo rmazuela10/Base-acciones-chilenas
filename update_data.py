@@ -85,7 +85,8 @@ def procesar(inst, completo: bool, ignorar_previo: bool):
         fetch = cargar_fetcher(inst.get("fuente", "yahoo"))
         if fetch is not None:
             desde = None
-            if len(previo) >= MIN_PUNTOS and not completo:
+            falta_s = inst.get("categoria") == "accion" and previo and "s" not in previo[0]  # serie sin cierre sin ajustar: se baja completa
+            if len(previo) >= MIN_PUNTOS and not completo and not falta_s:
                 ult = date.fromisoformat(previo[-1]["d"])
                 desde = (ult - timedelta(days=SOLAPE_DIAS)).isoformat()
             nuevo = fetch(inst, desde or inicio_historia())
@@ -94,6 +95,9 @@ def procesar(inst, completo: bool, ignorar_previo: bool):
             if desde is None:
                 previo = []  # descarga completa: reemplaza todo lo previo
             fusion = {r["d"]: r for r in previo}
+            for r in nuevo:
+                if r.get("s") is None and (fusion.get(r["d"]) or {}).get("s") is not None:
+                    r["s"] = fusion[r["d"]]["s"]  # no perder el cierre sin ajustar ya guardado
             fusion.update({r["d"]: r for r in nuevo})  # lo nuevo pisa lo previo
             previo = [fusion[k] for k in sorted(fusion) if k >= inicio_historia()]
             if inst.get("fuente", "yahoo") == "yahoo" and inst.get("categoria") in ("accion", "etf"):

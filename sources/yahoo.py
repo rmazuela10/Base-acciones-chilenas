@@ -138,8 +138,29 @@ def _serie_horaria(inst, desde):
     return [r for r in diario if r["d"] < horarias[0]["d"]] + horarias
 
 
+def _sin_ajustar(inst, desde):
+    """{fecha: cierre sin ajustar por dividendos} (sí ajustado por splits, como lo entrega Yahoo con auto_adjust=False).
+    Se usa para valor de mercado y múltiplos: el cierre ajustado subestima los precios pasados."""
+    t = inst["ticker"]
+    rows = _quitar_relleno(_descargar(t, desde, False))
+    rows = _completar_intradia(t, rows, desde)
+    return {r["d"]: r["c"] for r in _quitar_spikes(rows)}
+
+
 def fetch_series(inst: dict, desde: str | None) -> list[dict]:
-    """Devuelve [{"d","c","v"}] ascendente. desde=None -> historial completo."""
+    """Devuelve [{"d","c","v"}] ascendente (en acciones, también "s": cierre sin ajustar). desde=None -> historial completo."""
+    rows = _fetch_ajustada(inst, desde)
+    if inst.get("categoria") == "accion":
+        try:
+            raw = _sin_ajustar(inst, desde)
+        except Exception:
+            raw = {}
+        for r in rows:
+            r["s"] = raw.get(r["d"])
+    return rows
+
+
+def _fetch_ajustada(inst: dict, desde: str | None) -> list[dict]:
     if inst.get("barras") == "horarias":
         rows = _quitar_spikes(_serie_horaria(inst, desde))
         return _ajustar_splits_etf(rows) if inst.get("categoria") == "etf" else rows
