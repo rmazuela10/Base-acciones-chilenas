@@ -1,15 +1,20 @@
 name: Actualizar precios
 
-# De lunes a viernes, cada 30 minutos (minutos 7 y 37: GitHub descarta o atrasa más las corridas de la hora en punto y la media hora) mientras opera la bolsa de Santiago (09:30 a 17:00 hora de Chile), más una
-# corrida después del cierre. Cada corrida trae de Yahoo Finance el último valor del día y reemplaza la fila de hoy:
-# en cada serie hay una sola fila por fecha. Las corridas sin datos nuevos no guardan nada.
-#
-# GitHub programa en UTC y Chile cambia de horario (UTC-3 en verano, UTC-4 en invierno). Las 12:07 a 21:37 UTC
-# cubren la rueda en ambos horarios; las 22:22 y 23:22 UTC caen después del cierre. GitHub puede atrasar una
-# ejecución programada unos minutos. Se puede lanzar a mano desde Actions > "Actualizar precios" > Run workflow.
+# De lunes a viernes, mientras opera la bolsa de Santiago (09:30 a 17:00 hora de Chile), el precio se actualiza cada 30 minutos.
+# GitHub atrasa o descarta muchas corridas programadas (son de mejor esfuerzo), así que en vez de 20 disparos al día hay solo DOS
+# tramos largos: cada uno arranca una vez y repite la actualización cada 30 minutos dentro de la misma corrida, hasta su hora de fin.
+#   - 12:07 UTC -> hasta las 17:00 UTC
+#   - 17:07 UTC -> hasta las 21:45 UTC
+# Chile cambia de horario (UTC-3 en verano, UTC-4 en invierno): 12:07 a 21:45 UTC cubren la rueda en ambos. Si un tramo parte tarde, igual
+# trabaja hasta su hora de fin; si parte después de ella, hace una sola actualización.
+# Cada vuelta trae de Yahoo Finance solo el último valor del día (ajustado y sin ajustar) y reemplaza la fila de hoy: en cada serie hay
+# una sola fila por fecha. Las vueltas sin datos nuevos no guardan nada.
+# Las 22:22 y 23:22 UTC caen después del cierre: revisan además los últimos días y los ajustes por dividendos.
+# Se puede lanzar a mano desde Actions > "Actualizar precios" > Run workflow.
 on:
   schedule:
-    - cron: '7,37 12-21 * * 1-5'
+    - cron: '7 12 * * 1-5'
+    - cron: '7 17 * * 1-5'
     - cron: '22 22,23 * * 1-5'
   workflow_dispatch:
     inputs:
@@ -28,7 +33,7 @@ concurrency:
 jobs:
   precios:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
 
@@ -40,31 +45,55 @@ jobs:
       - name: Instalar librerías
         run: pip install -r requirements.txt
 
+      # Se guarda después de cada vuelta, aunque una falle: un instrumento con error conserva su serie anterior.
       - name: Precios desde Yahoo Finance
         env:
           PYTHONUTF8: '1'
-        # Cada 30 minutos en la rueda (minutos 7 y 37): solo el último precio, ajustado y sin ajustar. La corrida de después del
-        # cierre (22:22 y 23:22 UTC) y las manuales revisan además los últimos días y los ajustes por dividendos; "completo" baja los 15 años.
-        run: |
-          if [ "${{ inputs.completo }}" = "true" ]; then
-            python update_data.py --completo
-          elif [ "${{ github.event.schedule }}" = "7,37 12-21 * * 1-5" ]; then
-            python update_data.py --ultimo
-          else
-            python update_data.py
-          fi
-
-      # Se guarda siempre lo que se alcanzó a actualizar: un instrumento con error conserva su serie anterior.
-      - name: Guardar cambios
-        if: always()
+          DISPARO: ${{ github.event.schedule }}
+          COMPLETO: ${{ inputs.completo }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data
-          git diff --cached --quiet -- data/prices && { echo "Sin cambios de precios"; git restore --staged data; exit 0; }
-          git commit -m "Precios $(TZ=America/Santiago date '+%F %H:%M')"
-          git pull --rebase -q || true
-          git push
+
+          guardar() {
+            git add -A data
+            if git diff --cached --quiet -- data/prices; then
+              echo "Sin cambios de precios"; git restore --staged data; return 0
+            fi
+            git commit -q -m "Precios $(TZ=America/Santiago date '+%F %H:%M')"
+            git pull --rebase -q || true
+            git push || echo "No se pudo subir los cambios; se reintenta en la próxima vuelta"
+          }
+
+          if [ "$COMPLETO" = "true" ]; then
+            python update_data.py --completo || true
+            guardar
+            exit 0
+          fi
+
+          case "$DISPARO" in
+            "7 12 * * 1-5") FIN="17:00" ;;
+            "7 17 * * 1-5") FIN="21:45" ;;
+            *) FIN="" ;;
+          esac
+
+          if [ -z "$FIN" ]; then          # corrida de después del cierre o manual: una sola vez, con revisión de días y dividendos
+            python update_data.py || true
+            guardar
+            exit 0
+          fi
+
+          FIN_S=$(date -u -d "today $FIN" +%s)
+          while true; do
+            INI=$(date +%s)
+            python update_data.py --ultimo || echo "La actualización falló; se reintenta en la próxima vuelta"
+            guardar
+            ESPERA=$(( 1800 - ($(date +%s) - INI) ))
+            [ $ESPERA -lt 60 ] && ESPERA=60
+            [ $(( $(date +%s) + ESPERA )) -gt "$FIN_S" ] && break
+            echo "Próxima vuelta en $ESPERA s"
+            sleep $ESPERA
+          done
 
       # Si fallan muchos instrumentos (p. ej. Yahoo bloquea al servidor), el trabajo queda en rojo y GitHub avisa por correo.
       - name: Revisar errores
