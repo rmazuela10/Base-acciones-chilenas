@@ -1,6 +1,6 @@
 {
 "mercado":"chile",
-"actualizado":"2026-11-09T22:16:46+00:00",
+"actualizado":"2026-11-10T00:39:53+00:00",
 "series":[
 {"ticker":"AGUAS-A.SN","nombre":"Aguas Andinas A","categoria":"accion","moneda":"CLP","sector":"Utilities","archivo":"prices/AGUAS-A.SN.json","primer_dato":"2011-11-07","ultimo_dato":"2026-11-09","n":3730,"ultimo":328.799988,"error":null},
 {"ticker":"ANDINA-B.SN","nombre":"Embotelladora Andina B","categoria":"accion","moneda":"CLP","sector":"Consumo básico","archivo":"prices/ANDINA-B.SN.json","primer_dato":"2011-11-07","ultimo_dato":"2026-11-09","n":3728,"ultimo":4754.5,"error":null},
@@ -57,6 +57,6 @@
 {"ticker":"LQD.SN","nombre":"iShares iBoxx USD Investment Grade","categoria":"etf","moneda":"USD","sector":"Renta fija","archivo":"prices/LQD.SN.json","primer_dato":"2011-11-07","ultimo_dato":"2026-11-02","n":1087,"ultimo":102.470001,"error":null},
 {"ticker":"HYG.SN","nombre":"iShares iBoxx USD High Yield","categoria":"etf","moneda":"USD","sector":"Renta fija","archivo":"prices/HYG.SN.json","primer_dato":"2011-11-07","ultimo_dato":"2026-11-03","n":895,"ultimo":77.199997,"error":null},
 {"ticker":"IAU.SN","nombre":"iShares Gold Trust","categoria":"etf","moneda":"USD","sector":"Commodities","archivo":"prices/IAU.SN.json","primer_dato":"2011-11-07","ultimo_dato":"2026-11-05","n":897,"ultimo":75.419998,"error":null},
-{"ticker":"CLP=X","nombre":"Dólar (pesos por US$)","categoria":"referencia","moneda":"CLP","sector":null,"archivo":"prices/CLP_X.json","primer_dato":"2011-11-07","ultimo_dato":"2026-11-09","n":3905,"ultimo":966.960022,"error":null}
+{"ticker":"CLP=X","nombre":"Dólar (pesos por US$)","categoria":"referencia","moneda":"CLP","sector":null,"archivo":"prices/CLP_X.json","primer_dato":"2011-11-07","ultimo_dato":"2026-11-09","n":3905,"ultimo":954.988586,"error":null}
 ]
 }
