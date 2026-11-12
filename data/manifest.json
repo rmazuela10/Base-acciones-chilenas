@@ -1,6 +1,6 @@
 {
 "mercado":"chile",
-"actualizado":"2026-11-12T19:50:44+00:00",
+"actualizado":"2026-11-12T22:40:46+00:00",
 "series":[
 {"ticker":"AGUAS-A.SN","nombre":"Aguas Andinas A","categoria":"accion","moneda":"CLP","sector":"Utilities","archivo":"prices/AGUAS-A.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3728,"ultimo":330.0,"error":null},
 {"ticker":"ANDINA-B.SN","nombre":"Embotelladora Andina B","categoria":"accion","moneda":"CLP","sector":"Consumo básico","archivo":"prices/ANDINA-B.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3726,"ultimo":4788.899902,"error":null},
@@ -20,7 +20,7 @@
 {"ticker":"ENELCHILE.SN","nombre":"Enel Chile","categoria":"accion","moneda":"CLP","sector":"Utilities","archivo":"prices/ENELCHILE.SN.json","primer_dato":"2016-04-21","ultimo_dato":"2026-11-12","n":2623,"ultimo":82.309998,"error":null},
 {"ticker":"ENTEL.SN","nombre":"Entel","categoria":"accion","moneda":"CLP","sector":"Telecomunicaciones","archivo":"prices/ENTEL.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3728,"ultimo":4500.0,"error":null},
 {"ticker":"FALABELLA.SN","nombre":"Falabella","categoria":"accion","moneda":"CLP","sector":"Consumo discrecional","archivo":"prices/FALABELLA.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3728,"ultimo":6675.0,"error":null},
-{"ticker":"IAM.SN","nombre":"Inversiones Aguas Metropolitanas","categoria":"accion","moneda":"CLP","sector":"Utilities","archivo":"prices/IAM.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3726,"ultimo":890.0,"error":null},
+{"ticker":"IAM.SN","nombre":"Inversiones Aguas Metropolitanas","categoria":"accion","moneda":"CLP","sector":"Utilities","archivo":"prices/IAM.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3726,"ultimo":888.619995,"error":null},
 {"ticker":"ITAUCL.SN","nombre":"Banco Itaú Chile","categoria":"accion","moneda":"CLP","sector":"Financiero","archivo":"prices/ITAUCL.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3726,"ultimo":22710.0,"error":null},
 {"ticker":"LTM.SN","nombre":"LATAM Airlines","categoria":"accion","moneda":"CLP","sector":"Industrial","archivo":"prices/LTM.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3726,"ultimo":24.01,"error":null},
 {"ticker":"MALLPLAZA.SN","nombre":"Plaza S.A.","categoria":"accion","moneda":"CLP","sector":"Inmobiliario","archivo":"prices/MALLPLAZA.SN.json","primer_dato":"2018-07-27","ultimo_dato":"2026-11-12","n":2060,"ultimo":3278.5,"error":null},
@@ -28,17 +28,17 @@
 {"ticker":"QUINENCO.SN","nombre":"Quiñenco","categoria":"accion","moneda":"CLP","sector":"Industrial","archivo":"prices/QUINENCO.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3620,"ultimo":4500.0,"error":null},
 {"ticker":"RIPLEY.SN","nombre":"Ripley Corp","categoria":"accion","moneda":"CLP","sector":"Consumo discrecional","archivo":"prices/RIPLEY.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3728,"ultimo":431.0,"error":null},
 {"ticker":"SMU.SN","nombre":"SMU","categoria":"accion","moneda":"CLP","sector":"Consumo básico","archivo":"prices/SMU.SN.json","primer_dato":"2017-01-24","ultimo_dato":"2026-11-12","n":2427,"ultimo":99.400002,"error":null},
-{"ticker":"SONDA.SN","nombre":"Sonda","categoria":"accion","moneda":"CLP","sector":"Tecnología","archivo":"prices/SONDA.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3714,"ultimo":267.0,"error":null},
+{"ticker":"SONDA.SN","nombre":"Sonda","categoria":"accion","moneda":"CLP","sector":"Tecnología","archivo":"prices/SONDA.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3714,"ultimo":266.970001,"error":null},
 {"ticker":"SQM-B.SN","nombre":"SQM Serie B","categoria":"accion","moneda":"CLP","sector":"Materiales","archivo":"prices/SQM-B.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3728,"ultimo":54100.0,"error":null},
 {"ticker":"VAPORES.SN","nombre":"CSAV","categoria":"accion","moneda":"CLP","sector":"Industrial","archivo":"prices/VAPORES.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3728,"ultimo":48.150002,"error":null},
 {"ticker":"ILC.SN","nombre":"Inversiones La Construcción","categoria":"accion","moneda":"CLP","sector":"Financiero","archivo":"prices/ILC.SN.json","primer_dato":"2012-07-20","ultimo_dato":"2026-11-12","n":3554,"ultimo":22630.0,"error":null},
 {"ticker":"SALFACORP.SN","nombre":"Salfacorp","categoria":"accion","moneda":"CLP","sector":"Industrial","archivo":"prices/SALFACORP.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3723,"ultimo":1115.0,"error":null},
 {"ticker":"PAMPA.SN","nombre":"Pampa Investments","categoria":"accion","moneda":"CLP","sector":"Materiales","archivo":"prices/PAMPA.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3403,"ultimo":8.561,"error":null},
 {"ticker":"BESALCO.SN","nombre":"Besalco","categoria":"accion","moneda":"CLP","sector":"Industrial","archivo":"prices/BESALCO.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-11","n":3633,"ultimo":1188.0,"error":null},
-{"ticker":"CFMITNIPSA.SN","nombre":"ETF It Now MSCI IPSA","categoria":"etf","moneda":"CLP","sector":"Chile","archivo":"prices/CFMITNIPSA.SN.json","primer_dato":"2024-11-11","ultimo_dato":"2026-11-12","n":497,"ultimo":4891.399902,"error":null},
+{"ticker":"CFMITNIPSA.SN","nombre":"ETF It Now MSCI IPSA","categoria":"etf","moneda":"CLP","sector":"Chile","archivo":"prices/CFMITNIPSA.SN.json","primer_dato":"2024-11-11","ultimo_dato":"2026-11-12","n":497,"ultimo":4885.600098,"error":null},
 {"ticker":"CFIETFCC.SN","nombre":"ETF Singular Chile Corporativo","categoria":"etf","moneda":"CLP","sector":"Renta fija","archivo":"prices/CFIETFCC.SN.json","primer_dato":"2019-01-25","ultimo_dato":"2026-11-12","n":1882,"ultimo":1548.0,"error":null},
 {"ticker":"CFIETFCD.SN","nombre":"ETF Singular Chile Corta Duración","categoria":"etf","moneda":"CLP","sector":"Renta fija","archivo":"prices/CFIETFCD.SN.json","primer_dato":"2019-11-04","ultimo_dato":"2026-11-12","n":1595,"ultimo":1283.199951,"error":null},
-{"ticker":"CFISPETF.SN","nombre":"ETF Singular S&P 500","categoria":"etf","moneda":"CLP","sector":"EE.UU.","archivo":"prices/CFISPETF.SN.json","primer_dato":"2022-03-10","ultimo_dato":"2026-11-12","n":1131,"ultimo":1926.5,"error":null},
+{"ticker":"CFISPETF.SN","nombre":"ETF Singular S&P 500","categoria":"etf","moneda":"CLP","sector":"EE.UU.","archivo":"prices/CFISPETF.SN.json","primer_dato":"2022-03-10","ultimo_dato":"2026-11-12","n":1131,"ultimo":1925.599976,"error":null},
 {"ticker":"CFINASDAQ.SN","nombre":"ETF Singular Nasdaq 100","categoria":"etf","moneda":"CLP","sector":"EE.UU.","archivo":"prices/CFINASDAQ.SN.json","primer_dato":"2021-10-18","ultimo_dato":"2026-11-12","n":1233,"ultimo":2247.699951,"error":null},
 {"ticker":"IVV.SN","nombre":"iShares Core S&P 500 (IVV)","categoria":"etf","moneda":"USD","sector":"EE.UU.","archivo":"prices/IVV.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-11","n":2468,"ultimo":756.049988,"error":null},
 {"ticker":"IVVCL.SN","nombre":"iShares Core S&P 500 (IVV, en CLP)","categoria":"etf","moneda":"CLP","sector":"EE.UU.","archivo":"prices/IVVCL.SN.json","primer_dato":"2015-07-22","ultimo_dato":"2026-11-12","n":1522,"ultimo":758100.0,"error":null},
@@ -57,6 +57,6 @@
 {"ticker":"LQD.SN","nombre":"iShares iBoxx USD Investment Grade","categoria":"etf","moneda":"USD","sector":"Renta fija","archivo":"prices/LQD.SN.json","primer_dato":"2011-11-17","ultimo_dato":"2026-11-11","n":1088,"ultimo":104.669998,"error":null},
 {"ticker":"HYG.SN","nombre":"iShares iBoxx USD High Yield","categoria":"etf","moneda":"USD","sector":"Renta fija","archivo":"prices/HYG.SN.json","primer_dato":"2011-11-17","ultimo_dato":"2026-11-02","n":892,"ultimo":77.199997,"error":null},
 {"ticker":"IAU.SN","nombre":"iShares Gold Trust","categoria":"etf","moneda":"USD","sector":"Commodities","archivo":"prices/IAU.SN.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-11","n":897,"ultimo":77.779999,"error":null},
-{"ticker":"CLP=X","nombre":"Dólar (pesos por US$)","categoria":"referencia","moneda":"CLP","sector":null,"archivo":"prices/CLP_X.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3903,"ultimo":994.700012,"error":null}
+{"ticker":"CLP=X","nombre":"Dólar (pesos por US$)","categoria":"referencia","moneda":"CLP","sector":null,"archivo":"prices/CLP_X.json","primer_dato":"2011-11-14","ultimo_dato":"2026-11-12","n":3903,"ultimo":994.0,"error":null}
 ]
 }
