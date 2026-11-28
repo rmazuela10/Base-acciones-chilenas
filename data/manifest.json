@@ -1,6 +1,6 @@
 {
 "mercado":"chile",
-"actualizado":"2026-11-28T01:27:47+00:00",
+"actualizado":"2026-11-28T05:58:14+00:00",
 "series":[
 {"ticker":"AGUAS-A.SN","nombre":"Aguas Andinas A","categoria":"accion","moneda":"CLP","sector":"Utilities","archivo":"prices/AGUAS-A.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3729,"ultimo":325.5,"error":null},
 {"ticker":"ANDINA-B.SN","nombre":"Embotelladora Andina B","categoria":"accion","moneda":"CLP","sector":"Consumo básico","archivo":"prices/ANDINA-B.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3727,"ultimo":4625.0,"error":null},
@@ -28,7 +28,7 @@
 {"ticker":"QUINENCO.SN","nombre":"Quiñenco","categoria":"accion","moneda":"CLP","sector":"Industrial","archivo":"prices/QUINENCO.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3621,"ultimo":4595.0,"error":null},
 {"ticker":"RIPLEY.SN","nombre":"Ripley Corp","categoria":"accion","moneda":"CLP","sector":"Consumo discrecional","archivo":"prices/RIPLEY.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3729,"ultimo":430.48999,"error":null},
 {"ticker":"SMU.SN","nombre":"SMU","categoria":"accion","moneda":"CLP","sector":"Consumo básico","archivo":"prices/SMU.SN.json","primer_dato":"2017-01-24","ultimo_dato":"2026-11-27","n":2438,"ultimo":97.690002,"error":null},
-{"ticker":"SONDA.SN","nombre":"Sonda","categoria":"accion","moneda":"CLP","sector":"Tecnología","archivo":"prices/SONDA.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3714,"ultimo":258.029999,"error":null},
+{"ticker":"SONDA.SN","nombre":"Sonda","categoria":"accion","moneda":"CLP","sector":"Tecnología","archivo":"prices/SONDA.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3715,"ultimo":258.029999,"error":null},
 {"ticker":"SQM-B.SN","nombre":"SQM Serie B","categoria":"accion","moneda":"CLP","sector":"Materiales","archivo":"prices/SQM-B.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3729,"ultimo":50730.0,"error":null},
 {"ticker":"VAPORES.SN","nombre":"CSAV","categoria":"accion","moneda":"CLP","sector":"Industrial","archivo":"prices/VAPORES.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3729,"ultimo":47.650002,"error":null},
 {"ticker":"ILC.SN","nombre":"Inversiones La Construcción","categoria":"accion","moneda":"CLP","sector":"Financiero","archivo":"prices/ILC.SN.json","primer_dato":"2012-07-20","ultimo_dato":"2026-11-27","n":3565,"ultimo":24510.0,"error":null},
