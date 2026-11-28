@@ -1,6 +1,6 @@
 {
 "mercado":"chile",
-"actualizado":"2026-11-28T00:27:50+00:00",
+"actualizado":"2026-11-28T01:27:47+00:00",
 "series":[
 {"ticker":"AGUAS-A.SN","nombre":"Aguas Andinas A","categoria":"accion","moneda":"CLP","sector":"Utilities","archivo":"prices/AGUAS-A.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3729,"ultimo":325.5,"error":null},
 {"ticker":"ANDINA-B.SN","nombre":"Embotelladora Andina B","categoria":"accion","moneda":"CLP","sector":"Consumo básico","archivo":"prices/ANDINA-B.SN.json","primer_dato":"2011-11-28","ultimo_dato":"2026-11-27","n":3727,"ultimo":4625.0,"error":null},
